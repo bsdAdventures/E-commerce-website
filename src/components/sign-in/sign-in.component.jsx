@@ -47,9 +47,9 @@ export default class SignIn extends Component {
             label="password"
             required
           />
-          <div style={{ display: "flex", justifyContent: "space-around" }}>
+          <div className="buttons">
             <CustomButton type="submit">SIGN IN</CustomButton>
-            <CustomButton onClick={signInWithGoogle}>
+            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
               SIGN IN WITH GOOGLE
             </CustomButton>
           </div>
