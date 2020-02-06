@@ -3,7 +3,7 @@ import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import { Homepage, ShopPage, SignInAndSignUpPage } from "./pages";
 import { Header } from "./components";
-import { auth } from "./firebase";
+import { auth, createUserProfileDocument } from "./firebase";
 
 class App extends React.Component {
   constructor(props) {
@@ -17,9 +17,24 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
-      console.log(user);
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        //get user from firebase and set to current user
+        const userRef = await createUserProfileDocument(userAuth);
+
+        console.log(userRef, "userRef");
+
+        userRef.onSnapshot(snapshot => {
+          this.setState({
+            currentUser: { id: snapshot.id, ...snapshot.data() }
+          });
+          console.log(this.state.currentUser);
+        });
+      } else {
+        //set currentuser to null when logged user
+        this.setState({ currentUser: userAuth });
+        console.log(this.state.currentUser);
+      }
     });
   }
 
