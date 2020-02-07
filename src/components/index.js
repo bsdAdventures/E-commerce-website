@@ -9,5 +9,6 @@ export * from "./collection-item";
 export * from "./header";
 export * from "./form-input";
 export * from "./custom-button";
+export * from "./cart-icon";
 
 export { SignIn, SignUp, Header };
