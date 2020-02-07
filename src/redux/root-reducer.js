@@ -5,5 +5,3 @@ import { userReducer } from "./user";
 export default combineReducers({
   user: userReducer
 });
-
-// export default persistReducer(persistConfig, rootReducer);
