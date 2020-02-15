@@ -17,7 +17,7 @@ export const cartReducer = (
     case CartActionTypes.ADD_ITEM:
       return {
         ...state,
-        cartItems: [...state.cartItems, action.payload]
+        cartItems: addItemToCart(state.cartItems, action.payload)
       };
     case CartActionTypes.REMOVE_ITEM:
       return {
