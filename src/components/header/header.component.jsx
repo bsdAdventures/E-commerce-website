@@ -40,6 +40,6 @@ const mapStateToProps = state => ({
   currentUser: state.user.currentUser
 });
 
-const mapDispatchToProps = {};
+// const mapDispatchToProps = {};
 
 export default connect(mapStateToProps)(Header);
