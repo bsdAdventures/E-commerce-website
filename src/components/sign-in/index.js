@@ -1,3 +1,3 @@
 import SignIn from "./sign-in.component";
 
-export default SignIn;
+export { SignIn };

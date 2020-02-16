@@ -3,7 +3,7 @@ import "./sign-in.styles.scss";
 import { FormInput, CustomButton } from "../../components";
 import { auth, signInWithGoogle } from "../../firebase";
 
-export default class SignIn extends Component {
+class SignIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -66,3 +66,5 @@ export default class SignIn extends Component {
     );
   }
 }
+
+export default SignIn;

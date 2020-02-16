@@ -3,7 +3,7 @@ import "./sign-up.styles.scss";
 import { FormInput, CustomButton } from "../../components";
 import { auth, createUserProfileDocument } from "../../firebase";
 
-export default class SignUp extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -94,3 +94,5 @@ export default class SignUp extends Component {
     );
   }
 }
+
+export default SignUp;
