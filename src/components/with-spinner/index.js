@@ -1,1 +1,3 @@
-export * from "./with-spinner.component";
+import WithSpinner from "./with-spinner.component";
+
+export { WithSpinner };
